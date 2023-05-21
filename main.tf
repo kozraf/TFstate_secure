@@ -7,7 +7,7 @@ provider "aws" {
 resource "random_pet" "bucket_name" {
   length    = 2
   separator = "-"
-  prefix    = "S3bucket4TFstate-"
+  prefix    = "s3bucket4tfstate-"
 }
 
 resource "aws_s3_bucket" "tfstate" {
