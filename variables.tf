@@ -1,9 +1,11 @@
 variable "aws_access_key" {
-  description = "AKIAWPVNWZXHCW6CNOXH"
+  description = "aws_access_key"
   type        = string
+  default     = AKIAWPVNWZXHCW6CNOXH
 }
 
 variable "aws_secret_key" {
-  description = "Fhnsasv36KpgwoafMIcHJZXkE9T3Z3GDkAX1r4x/"
+  description = "aws_secret_key"
   type        = string
+  default     = Fhnsasv36KpgwoafMIcHJZXkE9T3Z3GDkAX1r4x/
 }
