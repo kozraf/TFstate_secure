@@ -10,6 +10,8 @@ A simple solution to keep TF state for remote backend.
 
 These variables are defined in the `variables.tf` file.
 
+!!This repo should not be used as AWS keys are stored in plain text!! 
+
 ## Outputs
 
 - `bucket_id`: The ID of the created S3 bucket.
