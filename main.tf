@@ -4,8 +4,14 @@ provider "aws" {
   secret_key = var.aws_secret_key
 }
 
+resource "random_pet" "bucket_name" {
+  length    = 2
+  separator = "-"
+  prefix    = "S3bucket4TFstate-"
+}
+
 resource "aws_s3_bucket" "tfstate" {
-  bucket = "my-tfstate-bucket"
+  bucket = "${random_pet.bucket_name.id}"
   acl    = "private"
   versioning {
     enabled = true
