@@ -26,10 +26,11 @@ While creating jenkins pipeline - make sure you choose:
 "This project is parameterized"
 
 Name: 
-action
+- action
 
 Choices:
-plan
-apply --auto-approve
-destroy --auto-approve
-state show a
+- plan
+- apply --auto-approve
+- destroy --auto-approve
+- state show (TF resource name goes here)
+- state list
