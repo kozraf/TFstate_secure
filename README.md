@@ -3,14 +3,18 @@ This repository hosts a Terraform module for managing specific AWS resources, na
 A simple solution to keep TF state for remote backend.
 
 
-## Variables
+## AWS creds
 
-- `aws_access_key`: Your AWS access key. (currently inactive key inserted)
-- `aws_secret_key`: Your AWS secret key. (currently inactive key inserted)
+1. Install CloudBees AWS Credentials Plugin
+2. Go to credentials and configore new credentials Dashboard -> Manage Jenkins -> and clicking on Global and then Add Credentials, fill AWS access key and secret key and make sure you will capture generated ID of the creds
+Credentials
+3. In pipeline - use following:
 
-These variables are defined in the `variables.tf` file.
-
-!!This repo should not be used as AWS keys are stored in plain text!! 
+    environment {
+        // Load AWS credentials
+        AWS_CREDENTIALS = credentials('creds_ID_from_step_2')
+    }
+4. Check Jenkins file for more info    
 
 ## Outputs
 
