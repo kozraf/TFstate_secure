@@ -17,3 +17,19 @@ These variables are defined in the `variables.tf` file.
 - `dynamodb_table_name`: The name of the created DynamoDB table.
 
 These outputs are defined in the `outputs.tf` file.
+
+
+## Jenkins
+
+While creating jenkins pipeline - make sure you choose:
+
+"This project is parameterized"
+
+Name: 
+action
+
+Choices:
+plan
+apply --auto-approve
+destroy --auto-approve
+state show a
