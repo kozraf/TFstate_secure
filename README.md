@@ -6,7 +6,7 @@ A simple solution to keep TF state for remote backend.
 ## AWS creds
 
 1. Install CloudBees AWS Credentials Plugin
-2. Go to credentials and configore new credentials Dashboard -> Manage Jenkins -> and clicking on Global and then Add Credentials, fill AWS access key and secret key and make sure you will capture generated ID of the creds
+2. Go to credentials and configure new credentials Dashboard -> Manage Jenkins -> and clicking on Global and then Add Credentials, fill AWS access key and secret key and make sure you will capture generated ID of the creds
 Credentials
 3. In pipeline - use following:
 
