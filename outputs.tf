@@ -1,5 +1,5 @@
 output "bucket_id" {
-  description = "The name of the bucket"
+  description = "ID of the bucket"
   value       = aws_s3_bucket.tfstate.id
 }
 
