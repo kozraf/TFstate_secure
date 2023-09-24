@@ -1,17 +1,16 @@
 provider "aws" {
   region  = "us-east-1"
 }
-
+/*
 terraform {
   backend "s3" {
     bucket         = "tf-state-storage-bucket"
     key            = "terraform.tfstate"
-    region         = "us-east-1"
     dynamodb_table = "tf-state-lock"
     encrypt        = true
   }
 }
-
+*/
 resource "random_pet" "bucket_name" {
   length    = 2
   separator = "-"
