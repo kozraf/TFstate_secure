@@ -2,14 +2,8 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "random_pet" "bucket_name" {
-  length    = 2
-  separator = "-"
-  prefix    = "s3bucket4tfstate-"
-}
-
 resource "aws_s3_bucket" "tfstate" {
-  bucket = "${random_pet.bucket_name.id}"
+  bucket = "S3_for_TF_state"
   acl    = "private"
   versioning {
     enabled = true
