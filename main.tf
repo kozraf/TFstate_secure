@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "tfstate" {
 }
 
 resource "aws_dynamodb_table" "tf_lock" {
-  name           = "my_tfstate_lock"
+  name           = "tfstate_lock"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "LockID"
 
