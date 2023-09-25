@@ -1,30 +1,60 @@
 pipeline {
     agent any
-    
-    environment {
-        // Load AWS credentials
-        AWS_CREDENTIALS = credentials('c30bd715-2441-47d2-8fce-73f9fc4cba3b')
+
+    parameters {
+        choice(name: 'STAGE_CHOICE', choices: ['init', 'plan', 'apply','destroy'], description: 'Which stage to run?')
     }
-    
+
+	    environment {
+        // Load AWS credentials
+        AWS_CREDENTIALS = credentials('1111804f-14b5-42f0-84fd-73e5d84c1746')
+    }
+
     stages {
-        
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/kozraf/TFstate_secure'
             }
         }
 
-        stage ("terraform init") {
+        stage('Initialize terraform') {
+            when {
+                expression { params.STAGE_CHOICE == 'init' }
+            }
             steps {
-                sh ("terraform init -reconfigure") 
+                echo "Initialize terraform..."
+                sh ("terraform init -reconfigure")
             }
         }
-        stage ("Action") {
+
+		stage('Run terraform plan') {
+            when {
+                expression { params.STAGE_CHOICE == 'plan' }
+            }
             steps {
-                echo "Terraform action is --> ${action}"
-                sh ('terraform ${action}') 
-           }
+                echo "Run terraform plan..."
+                sh ("terraform plan")
+            }
         }
-        
+
+		stage('Run terraform apply') {
+            when {
+                expression { params.STAGE_CHOICE == 'apply' }
+            }
+            steps {
+                echo "Deploying Infrastructure..."
+                sh ("terraform apply --auto-approve")
+            }
+        }
+
+		stage('Run terraform destroy') {
+            when {
+                expression { params.STAGE_CHOICE == 'destroy' }
+            }
+            steps {
+                echo "Destroying Infrastructure..."
+                sh ("terraform destroy --auto-approve")
+            }
+        }
     }
 }
