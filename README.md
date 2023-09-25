@@ -27,7 +27,7 @@ These outputs are defined in the `outputs.tf` file.
 
 ## Jenkins
 
-While creating jenkins pipeline - make sure you choose:
+Create a new item, name it, choose pipeline, make sure you choose:
 
 "This project is parameterized"
 
@@ -35,8 +35,9 @@ Name:
 - action
 
 Choices:
-- plan
-- apply --auto-approve
-- destroy --auto-approve
-- state show (TF resource name goes here)
-- state list
+init
+plan
+apply
+destroy
+
+and add content of jenkins_pipeline.txt to script below the page.
