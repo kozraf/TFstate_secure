@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "tfstate" {
-  bucket = "tf-state-s3-for-imagesharingprogram2"
+  bucket = "tf-state-s3-for-imagesharingprogram3"
   acl    = "private"
   versioning {
     enabled = true
