@@ -41,3 +41,7 @@ apply
 destroy
 
 and add content of jenkins_pipeline.txt to script below the page.
+
+## License
+
+The scripts, configurations, and documentation in this project are licensed under the MIT License. This license applies only to the scripts, configurations, and documentation contained in this repository and not to the software they interact with. 
